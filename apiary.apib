@@ -4,6 +4,27 @@ HOST: http://atomic.logsdon.io
 # atomic
 API for presenting questionnaire answers
 
+## Resource Collection [/]
+
+A list of available resources.
+
+### List all Resources [GET]
++ Response 200 (application/json)
+
+        [{
+            "label": "Resource Collection",
+            "url": "http://atomic.logsdon.io/"
+        },{
+            "label": "Prompts Collection",
+            "url": "http://atomic.logsdon.io/prompts"
+        },{
+            "label": "Retrieve a Prompt",
+            "url": "http://atomic.logsdon.io/prompts/{slug}"
+        },{
+            "label": "Prompt's Responses Collection",
+            "url": "http://atomic.logsdon.io/prompts/{slug}/responses"
+        }]
+
 ## Prompts Collection [/prompts]
 A list of all available prompts.
 
@@ -15,7 +36,6 @@ A list of all available prompts.
             "prompt": "Let’s start with the basics",
             "slug": "basics",
             "url": "http://atomic.logsdon.io/prompts/basics",
-            "response": { ... },
             "created_at": "2014-03-14 14:13:00",
             "updated_at": "2014-03-15 20:00:00"
         },{
@@ -23,7 +43,6 @@ A list of all available prompts.
             "prompt": "Where did you hear about Atomic?",
             "slug": "hear-about-atomic",
             "url": "http://atomic.logsdon.io/prompts/hear-about-atomic",
-            "response": { ... },
             "created_at": "2014-03-14 14:13:00",
             "updated_at": "2014-03-15 20:00:00"
         },{
@@ -31,7 +50,6 @@ A list of all available prompts.
             "prompt": "Why are you applying to Atomic?",
             "slug": "why-apply",
             "url": "http://atomic.logsdon.io/prompts/why-apply",
-            "response": { ... },
             "created_at": "2014-03-14 14:13:00",
             "updated_at": "2014-03-15 20:00:00"
         },{
@@ -39,7 +57,6 @@ A list of all available prompts.
             "prompt": "Tell me about the first program you were proud of.",
             "slug": "first-program",
             "url": "http://atomic.logsdon.io/prompts/first-program",
-            "response": { ... },
             "created_at": "2014-03-14 14:13:00",
             "updated_at": "2014-03-15 20:00:00"
         },{
@@ -47,7 +64,6 @@ A list of all available prompts.
             "prompt": "Do you have any hobby projects?",
             "slug": "hobby-projects",
             "url": "http://atomic.logsdon.io/prompts/hobby-projects",
-            "response": { ... },
             "created_at": "2014-03-14 14:13:00",
             "updated_at": "2014-03-15 20:00:00"
         },{
@@ -55,7 +71,6 @@ A list of all available prompts.
             "prompt": "What is your favorite programming language? Why? What would you do to improve it?",
             "slug": "favorite-language",
             "url": "http://atomic.logsdon.io/prompts/favorite-language",
-            "response": { ... },
             "created_at": "2014-03-14 14:13:00",
             "updated_at": "2014-03-15 20:00:00"
         },{
@@ -63,7 +78,6 @@ A list of all available prompts.
             "prompt": "What are you planning on learning next?",
             "slug": "learning-plans",
             "url": "http://atomic.logsdon.io/prompts/learning-plans",
-            "response": { ... },
             "created_at": "2014-03-14 14:13:00",
             "updated_at": "2014-03-15 20:00:00"
         },{
@@ -71,7 +85,6 @@ A list of all available prompts.
             "prompt": "Tell me about a time when you were assigned a project that relied on technology unfamiliar to you.",
             "slug": "unfamiliar-technology",
             "url": "http://atomic.logsdon.io/prompts/unfamiliar-technology",
-            "response": { ... },
             "created_at": "2014-03-14 14:13:00",
             "updated_at": "2014-03-15 20:00:00"
         },{
@@ -79,7 +92,6 @@ A list of all available prompts.
             "prompt": "Show me some interesting code you’ve written and walk me through it.",
             "slug": "interesting-code",
             "url": "http://atomic.logsdon.io/prompts/interesting-code",
-            "response": { ... },
             "created_at": "2014-03-14 14:13:00",
             "updated_at": "2014-03-15 20:00:00"
         },{
@@ -87,7 +99,6 @@ A list of all available prompts.
             "prompt": "Tell me about a time you failed at something. What did you learn from the experience?",
             "slug": "failure",
             "url": "http://atomic.logsdon.io/prompts/failure",
-            "response": { ... },
             "created_at": "2014-03-14 14:13:00",
             "updated_at": "2014-03-15 20:00:00"
         },{
@@ -95,7 +106,6 @@ A list of all available prompts.
             "prompt": "Conflict is a part of life. Describe a time to me where you were involved in a conflict. How did you resolve it?",
             "slug": "conflict",
             "url": "http://atomic.logsdon.io/prompts/conflict",
-            "response": { ... },
             "created_at": "2014-03-14 14:13:00",
             "updated_at": "2014-03-15 20:00:00"
         },{
@@ -103,7 +113,6 @@ A list of all available prompts.
             "prompt": "How do you deal with situations where you know you can’t deliver?",
             "slug": "cannot-deliver",
             "url": "http://atomic.logsdon.io/prompts/cannot-deliver",
-            "response": { ... },
             "created_at": "2014-03-14 14:13:00",
             "updated_at": "2014-03-15 20:00:00"
         },{
@@ -124,14 +133,13 @@ The Prompt resource has the following attributes:
 - id
 - prompt
 - slug
-- response
 - created_at
 - updated_at
 
 + Parameters
-    + slug (required, string, `basics`) ... String `slug` of the Prompt to perform action with.
+    + slug (required, string, `basics`) ... String `slug` of the Prompt to retrieve.
 
-### Retrieve an Prompt [GET]
+### Retrieve a Prompt [GET]
 + Response 200 (application/json)
 
     + Body
@@ -141,11 +149,23 @@ The Prompt resource has the following attributes:
                 "prompt": "Let’s start with the basics",
                 "slug": "basics",
                 "url": "http://atomic.logsdon.io/prompts/basics",
-                "response": {
-                    "id": 1,
-                    "type":
-                },
                 "created_at": "2014-03-14 14:13:00",
                 "updated_at": "2014-03-15 20:00:00"
             }
 
+## Prompt's Responses Collection [/prompts/{slug}/responses]
+A collection of a single Prompt object's responses.
+
++ Parameters
+    + slug (required, string,  `basics`) ... String `slug` of the Prompt to retrieve Responses.
+    
+### Retrieve a Prompts Responses [GET]
++ Response 200 (application/json)
+
+    + Body
+        
+            [{
+                "id": 1,
+                "response": "The Basics",
+                "url": "http://atomic.logsdon.io/prompts/basics/responses/1"
+            }]
