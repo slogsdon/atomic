@@ -1,0 +1,151 @@
+FORMAT: 1A
+HOST: http://atomic.logsdon.io
+
+# atomic
+API for presenting questionnaire answers
+
+## Answers Collection [/answers]
+A list of all available answers.
+
+### List all Answers [GET]
++ Response 200 (application/json)
+
+        [{
+            "id": 1,
+            "prompt": "Let’s start with the basics",
+            "slug": "basics",
+            "url": "http://atomic.logsdon.io/answers/basics",
+            "response": { ... },
+            "created_at": "2014-03-14 14:13:00",
+            "updated_at": "2014-03-15 20:00:00"
+        },{
+            "id": 2,
+            "prompt": "Where did you hear about Atomic?",
+            "slug": "hear-about-atomic",
+            "url": "http://atomic.logsdon.io/answers/hear-about-atomic",
+            "response": { ... },
+            "created_at": "2014-03-14 14:13:00",
+            "updated_at": "2014-03-15 20:00:00"
+        },{
+            "id": 3,
+            "prompt": "Why are you applying to Atomic?",
+            "slug": "why-apply",
+            "url": "http://atomic.logsdon.io/answers/why-apply",
+            "response": { ... },
+            "created_at": "2014-03-14 14:13:00",
+            "updated_at": "2014-03-15 20:00:00"
+        },{
+            "id": 4,
+            "prompt": "Tell me about the first program you were proud of.",
+            "slug": "first-program",
+            "url": "http://atomic.logsdon.io/answers/first-program",
+            "response": { ... },
+            "created_at": "2014-03-14 14:13:00",
+            "updated_at": "2014-03-15 20:00:00"
+        },{
+            "id": 5,
+            "prompt": "Do you have any hobby projects?",
+            "slug": "hobby-projects",
+            "url": "http://atomic.logsdon.io/answers/hobby-projects",
+            "response": { ... },
+            "created_at": "2014-03-14 14:13:00",
+            "updated_at": "2014-03-15 20:00:00"
+        },{
+            "id": 6,
+            "prompt": "What is your favorite programming language? Why? What would you do to improve it?",
+            "slug": "favorite-language",
+            "url": "http://atomic.logsdon.io/answers/favorite-language",
+            "response": { ... },
+            "created_at": "2014-03-14 14:13:00",
+            "updated_at": "2014-03-15 20:00:00"
+        },{
+            "id": 7,
+            "prompt": "What are you planning on learning next?",
+            "slug": "learning-plans",
+            "url": "http://atomic.logsdon.io/answers/learning-plans",
+            "response": { ... },
+            "created_at": "2014-03-14 14:13:00",
+            "updated_at": "2014-03-15 20:00:00"
+        },{
+            "id": 8,
+            "prompt": "Tell me about a time when you were assigned a project that relied on technology unfamiliar to you.",
+            "slug": "unfamiliar-technology",
+            "url": "http://atomic.logsdon.io/answers/unfamiliar-technology",
+            "response": { ... },
+            "created_at": "2014-03-14 14:13:00",
+            "updated_at": "2014-03-15 20:00:00"
+        },{
+            "id": 9,
+            "prompt": "Show me some interesting code you’ve written and walk me through it.",
+            "slug": "interesting-code",
+            "url": "http://atomic.logsdon.io/answers/interesting-code",
+            "response": { ... },
+            "created_at": "2014-03-14 14:13:00",
+            "updated_at": "2014-03-15 20:00:00"
+        },{
+            "id": 10,
+            "prompt": "Tell me about a time you failed at something. What did you learn from the experience?",
+            "slug": "failure",
+            "url": "http://atomic.logsdon.io/answers/failure",
+            "response": { ... },
+            "created_at": "2014-03-14 14:13:00",
+            "updated_at": "2014-03-15 20:00:00"
+        },{
+            "id": 11,
+            "prompt": "Conflict is a part of life. Describe a time to me where you were involved in a conflict. How did you resolve it?",
+            "slug": "conflict",
+            "url": "http://atomic.logsdon.io/answers/conflict",
+            "response": { ... },
+            "created_at": "2014-03-14 14:13:00",
+            "updated_at": "2014-03-15 20:00:00"
+        },{
+            "id": 12,
+            "prompt": "How do you deal with situations where you know you can’t deliver?",
+            "slug": "cannot-deliver",
+            "url": "http://atomic.logsdon.io/answers/cannot-deliver",
+            "response": { ... },
+            "created_at": "2014-03-14 14:13:00",
+            "updated_at": "2014-03-15 20:00:00"
+        },{
+            "id": 13,
+            "prompt": "Show me how you would improve this autobiography document.",
+            "slug": "improve",
+            "url": "http://atomic.logsdon.io/answers/improve",
+            "response": { ... },
+            "created_at": "2014-03-14 14:13:00",
+            "updated_at": "2014-03-15 20:00:00"
+        }]
+        
+## Answer [/answers/{slug}]
+A single Answer object with all its details
+
+The Answer resource has the following attributes:
+
+- id
+- prompt
+- slug
+- response
+- created_at
+- updated_at
+
++ Parameters
+    + slug (required, string, `basics`) ... String `slug` of the Answer to perform action with.
+
+### Retrieve an Answer [GET]
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "id": 1,
+                "prompt": "Let’s start with the basics",
+                "slug": "basics",
+                "url": "http://atomic.logsdon.io/answers/basics",
+                "response": {
+                    "id": 1,
+                    "type":
+                },
+                "created_at": "2014-03-14 14:13:00",
+                "updated_at": "2014-03-15 20:00:00"
+            }
+
