@@ -9,107 +9,119 @@ API for presenting questionnaire answers
 A list of available resources.
 
 ### List all Resources [GET]
-+ Response 200 (application/json)
++ Response 200
 
-        [{
-            "label": "Resource Collection",
-            "url": "http://atomic.logsdon.io/"
-        },{
-            "label": "Prompts Collection",
-            "url": "http://atomic.logsdon.io/prompts"
-        },{
-            "label": "Retrieve a Prompt",
-            "url": "http://atomic.logsdon.io/prompts/{slug}"
-        },{
-            "label": "Prompt's Responses Collection",
-            "url": "http://atomic.logsdon.io/prompts/{slug}/responses"
-        }]
+    + Headers
+            
+            Content-Type: application/json; charset=utf-8
+
+    + Body
+
+            [{
+                "label": "Resource Collection",
+                "url": "http://atomic.logsdon.io/"
+            },{
+                "label": "Prompts Collection",
+                "url": "http://atomic.logsdon.io/prompts"
+            },{
+                "label": "Retrieve a Prompt",
+                "url": "http://atomic.logsdon.io/prompts/{slug}"
+            },{
+                "label": "Prompt's Responses Collection",
+                "url": "http://atomic.logsdon.io/prompts/{slug}/responses"
+            }]
 
 ## Prompts Collection [/prompts]
 A list of all available prompts.
 
 ### List all Prompts [GET]
-+ Response 200 (application/json)
++ Response 200
 
-        [{
-            "id": 1,
-            "prompt": "Let’s start with the basics",
-            "slug": "basics",
-            "url": "http://atomic.logsdon.io/prompts/basics",
-            "created_at": "2014-03-14 14:13:00"
-        },{
-            "id": 2,
-            "prompt": "Where did you hear about Atomic?",
-            "slug": "hear-about-atomic",
-            "url": "http://atomic.logsdon.io/prompts/hear-about-atomic",
-            "created_at": "2014-03-14 14:13:00"
-        },{
-            "id": 3,
-            "prompt": "Why are you applying to Atomic?",
-            "slug": "why-apply",
-            "url": "http://atomic.logsdon.io/prompts/why-apply",
-            "created_at": "2014-03-14 14:13:00"
-        },{
-            "id": 4,
-            "prompt": "Tell me about the first program you were proud of.",
-            "slug": "first-program",
-            "url": "http://atomic.logsdon.io/prompts/first-program",
-            "created_at": "2014-03-14 14:13:00"
-        },{
-            "id": 5,
-            "prompt": "Do you have any hobby projects?",
-            "slug": "hobby-projects",
-            "url": "http://atomic.logsdon.io/prompts/hobby-projects",
-            "created_at": "2014-03-14 14:13:00"
-        },{
-            "id": 6,
-            "prompt": "What is your favorite programming language? Why? What would you do to improve it?",
-            "slug": "favorite-language",
-            "url": "http://atomic.logsdon.io/prompts/favorite-language",
-            "created_at": "2014-03-14 14:13:00"
-        },{
-            "id": 7,
-            "prompt": "What are you planning on learning next?",
-            "slug": "learning-plans",
-            "url": "http://atomic.logsdon.io/prompts/learning-plans",
-            "created_at": "2014-03-14 14:13:00"
-        },{
-            "id": 8,
-            "prompt": "Tell me about a time when you were assigned a project that relied on technology unfamiliar to you.",
-            "slug": "unfamiliar-technology",
-            "url": "http://atomic.logsdon.io/prompts/unfamiliar-technology",
-            "created_at": "2014-03-14 14:13:00"
-        },{
-            "id": 9,
-            "prompt": "Show me some interesting code you’ve written and walk me through it.",
-            "slug": "interesting-code",
-            "url": "http://atomic.logsdon.io/prompts/interesting-code",
-            "created_at": "2014-03-14 14:13:00"
-        },{
-            "id": 10,
-            "prompt": "Tell me about a time you failed at something. What did you learn from the experience?",
-            "slug": "failure",
-            "url": "http://atomic.logsdon.io/prompts/failure",
-            "created_at": "2014-03-14 14:13:00"
-        },{
-            "id": 11,
-            "prompt": "Conflict is a part of life. Describe a time to me where you were involved in a conflict. How did you resolve it?",
-            "slug": "conflict",
-            "url": "http://atomic.logsdon.io/prompts/conflict",
-            "created_at": "2014-03-14 14:13:00"
-        },{
-            "id": 12,
-            "prompt": "How do you deal with situations where you know you can’t deliver?",
-            "slug": "cannot-deliver",
-            "url": "http://atomic.logsdon.io/prompts/cannot-deliver",
-            "created_at": "2014-03-14 14:13:00"
-        },{
-            "id": 13,
-            "prompt": "Show me how you would improve this autobiography document.",
-            "slug": "improve",
-            "url": "http://atomic.logsdon.io/prompts/improve",
-            "created_at": "2014-03-14 14:13:00"
-        }]
+    + Headers
+            
+            Content-Type: application/json; charset=utf-8
+
+    + Body
+
+            [{
+                "id": 1,
+                "prompt": "Let’s start with the basics",
+                "slug": "basics",
+                "url": "http://atomic.logsdon.io/prompts/basics",
+                "created_at": "2014-03-14 14:13:00"
+            },{
+                "id": 2,
+                "prompt": "Where did you hear about Atomic?",
+                "slug": "hear-about-atomic",
+                "url": "http://atomic.logsdon.io/prompts/hear-about-atomic",
+                "created_at": "2014-03-14 14:13:00"
+            },{
+                "id": 3,
+                "prompt": "Why are you applying to Atomic?",
+                "slug": "why-apply",
+                "url": "http://atomic.logsdon.io/prompts/why-apply",
+                "created_at": "2014-03-14 14:13:00"
+            },{
+                "id": 4,
+                "prompt": "Tell me about the first program you were proud of.",
+                "slug": "first-program",
+                "url": "http://atomic.logsdon.io/prompts/first-program",
+                "created_at": "2014-03-14 14:13:00"
+            },{
+                "id": 5,
+                "prompt": "Do you have any hobby projects?",
+                "slug": "hobby-projects",
+                "url": "http://atomic.logsdon.io/prompts/hobby-projects",
+                "created_at": "2014-03-14 14:13:00"
+            },{
+                "id": 6,
+                "prompt": "What is your favorite programming language? Why? What would you do to improve it?",
+                "slug": "favorite-language",
+                "url": "http://atomic.logsdon.io/prompts/favorite-language",
+                "created_at": "2014-03-14 14:13:00"
+            },{
+                "id": 7,
+                "prompt": "What are you planning on learning next?",
+                "slug": "learning-plans",
+                "url": "http://atomic.logsdon.io/prompts/learning-plans",
+                "created_at": "2014-03-14 14:13:00"
+            },{
+                "id": 8,
+                "prompt": "Tell me about a time when you were assigned a project that relied on technology unfamiliar to you.",
+                "slug": "unfamiliar-technology",
+                "url": "http://atomic.logsdon.io/prompts/unfamiliar-technology",
+                "created_at": "2014-03-14 14:13:00"
+            },{
+                "id": 9,
+                "prompt": "Show me some interesting code you’ve written and walk me through it.",
+                "slug": "interesting-code",
+                "url": "http://atomic.logsdon.io/prompts/interesting-code",
+                "created_at": "2014-03-14 14:13:00"
+            },{
+                "id": 10,
+                "prompt": "Tell me about a time you failed at something. What did you learn from the experience?",
+                "slug": "failure",
+                "url": "http://atomic.logsdon.io/prompts/failure",
+                "created_at": "2014-03-14 14:13:00"
+            },{
+                "id": 11,
+                "prompt": "Conflict is a part of life. Describe a time to me where you were involved in a conflict. How did you resolve it?",
+                "slug": "conflict",
+                "url": "http://atomic.logsdon.io/prompts/conflict",
+                "created_at": "2014-03-14 14:13:00"
+            },{
+                "id": 12,
+                "prompt": "How do you deal with situations where you know you can’t deliver?",
+                "slug": "cannot-deliver",
+                "url": "http://atomic.logsdon.io/prompts/cannot-deliver",
+                "created_at": "2014-03-14 14:13:00"
+            },{
+                "id": 13,
+                "prompt": "Show me how you would improve this autobiography document.",
+                "slug": "improve",
+                "url": "http://atomic.logsdon.io/prompts/improve",
+                "created_at": "2014-03-14 14:13:00"
+            }]
         
 ## Prompt [/prompts/{slug}]
 A single Prompt object with all its details
@@ -125,7 +137,11 @@ The Prompt resource has the following attributes:
     + slug (required, string, `basics`) ... String `slug` of the Prompt to retrieve.
 
 ### Retrieve a Prompt [GET]
-+ Response 200 (application/json)
++ Response 200
+
+    + Headers
+            
+            Content-Type: application/json; charset=utf-8
 
     + Body
 
@@ -144,7 +160,11 @@ A collection of a single Prompt object's responses.
     + slug (required, string, `basics`) ... String `slug` of the Prompt to retrieve Responses.
     
 ### Retrieve a Prompts Responses [GET]
-+ Response 200 (application/json)
++ Response 200
+
+    + Headers
+            
+            Content-Type: application/json; charset=utf-8
 
     + Body
         
@@ -160,87 +180,93 @@ A collection of a single Prompt object's responses.
 A list of all available responses.
 
 ### List all Responses [GET]
-+ Response 200 (application/json)
++ Response 200
 
-        [{
-            "id": 1,
-            "response": "Name: Shane Logsdon\rTwitter: https://twitter.com/shanelogsdon\rLinkedIn: http://www.linkedin.com/in/shanelogsdon\rGitHub: https://github.com/slogsdon\rWebsite/Blog: http://shane.logsdon.io\rPresentations: none\rPublications: none\rAny applications in the Apple App Store, Google Play, etc.: none\rOther links that will help us to get to know you better\rAre you a US citizen or permanent resident? yes",
-            "url": "http://atomic.logsdon.io/responses/1",
-            "prompt_id": 1,
-            "created_at": "2014-03-15T20:00:00Z"
-        },{
-            "id": 2,
-            "response": "I originally heard of Atomic Object through a blog post on Atomic Spin.",
-            "url": "http://atomic.logsdon.io/responses/2",
-            "prompt_id": 2,
-            "created_at": "2014-03-15T20:00:00Z"
-        },{
-            "id": 3,
-            "response": "",
-            "url": "",
-            "prompt_id": 0,
-            "created_at": "0001-01-01T00:00:00Z"
-        },{
-            "id": 4,
-            "response": "Class project in eighth grade. build out the process of a bill becoming a law. in basic",
-            "url": "http://atomic.logsdon.io/responses/4",
-            "prompt_id": 4,
-            "created_at": "2014-03-15T20:00:00Z"
-        },{
-            "id": 5,
-            "response": "- sugar & co\r- acvte\r- elixir-playground",
-            "url": "http://atomic.logsdon.io/responses/5",
-            "prompt_id": 5,
-            "created_at": "2014-03-15T20:00:00Z"
-        },{
-            "id": 6,
-            "response": "",
-            "url": "",
-            "prompt_id": 0,
-            "created_at": "0001-01-01T00:00:00Z"
-        },{
-            "id": 7,
-            "response": "- rails\r- haskell\r- a lisp: lfe, CL, or clojure",
-            "url": "http://atomic.logsdon.io/responses/7",
-            "prompt_id": 7,
-            "created_at": "2014-03-15T20:00:00Z"
-        },{
-            "id": 8,
-            "response": "vb.net stripe integration.",
-            "url": "http://atomic.logsdon.io/responses/8",
-            "prompt_id": 8,
-            "created_at": "2014-03-15T20:00:00Z"
-        },{
-            "id": 9,
-            "response": "",
-            "url": "",
-            "prompt_id": 0,
-            "created_at": "0001-01-01T00:00:00Z"
-        },{
-            "id": 10,
-            "response": "",
-            "url": "",
-            "prompt_id": 0,
-            "created_at": "0001-01-01T00:00:00Z"
-        },{
-            "id": 11,
-            "response": "",
-            "url": "",
-            "prompt_id": 0,
-            "created_at": "0001-01-01T00:00:00Z"
-        },{
-            "id": 12,
-            "response": "",
-            "url": "",
-            "prompt_id": 0,
-            "created_at": "0001-01-01T00:00:00Z"
-        },{
-            "id": 13,
-            "response": "restful api-like interface",
-            "url": "http://atomic.logsdon.io/responses/13",
-            "prompt_id": 13,
-            "created_at": "2014-03-15T20:00:00Z"
-        }]
+    + Headers
+            
+            Content-Type: application/json; charset=utf-8
+
+    + Body
+
+            [{
+                "id": 1,
+                "response": "Name: Shane Logsdon\rTwitter: https://twitter.com/shanelogsdon\rLinkedIn: http://www.linkedin.com/in/shanelogsdon\rGitHub: https://github.com/slogsdon\rWebsite/Blog: http://shane.logsdon.io\rPresentations: none\rPublications: none\rAny applications in the Apple App Store, Google Play, etc.: none\rOther links that will help us to get to know you better\rAre you a US citizen or permanent resident? yes",
+                "url": "http://atomic.logsdon.io/responses/1",
+                "prompt_id": 1,
+                "created_at": "2014-03-15T20:00:00Z"
+            },{
+                "id": 2,
+                "response": "I originally heard of Atomic Object through a blog post on Atomic Spin.",
+                "url": "http://atomic.logsdon.io/responses/2",
+                "prompt_id": 2,
+                "created_at": "2014-03-15T20:00:00Z"
+            },{
+                "id": 3,
+                "response": "",
+                "url": "",
+                "prompt_id": 0,
+                "created_at": "0001-01-01T00:00:00Z"
+            },{
+                "id": 4,
+                "response": "Class project in eighth grade. build out the process of a bill becoming a law. in basic",
+                "url": "http://atomic.logsdon.io/responses/4",
+                "prompt_id": 4,
+                "created_at": "2014-03-15T20:00:00Z"
+            },{
+                "id": 5,
+                "response": "- sugar & co\r- acvte\r- elixir-playground",
+                "url": "http://atomic.logsdon.io/responses/5",
+                "prompt_id": 5,
+                "created_at": "2014-03-15T20:00:00Z"
+            },{
+                "id": 6,
+                "response": "",
+                "url": "",
+                "prompt_id": 0,
+                "created_at": "0001-01-01T00:00:00Z"
+            },{
+                "id": 7,
+                "response": "- rails\r- haskell\r- a lisp: lfe, CL, or clojure",
+                "url": "http://atomic.logsdon.io/responses/7",
+                "prompt_id": 7,
+                "created_at": "2014-03-15T20:00:00Z"
+            },{
+                "id": 8,
+                "response": "vb.net stripe integration.",
+                "url": "http://atomic.logsdon.io/responses/8",
+                "prompt_id": 8,
+                "created_at": "2014-03-15T20:00:00Z"
+            },{
+                "id": 9,
+                "response": "",
+                "url": "",
+                "prompt_id": 0,
+                "created_at": "0001-01-01T00:00:00Z"
+            },{
+                "id": 10,
+                "response": "",
+                "url": "",
+                "prompt_id": 0,
+                "created_at": "0001-01-01T00:00:00Z"
+            },{
+                "id": 11,
+                "response": "",
+                "url": "",
+                "prompt_id": 0,
+                "created_at": "0001-01-01T00:00:00Z"
+            },{
+                "id": 12,
+                "response": "",
+                "url": "",
+                "prompt_id": 0,
+                "created_at": "0001-01-01T00:00:00Z"
+            },{
+                "id": 13,
+                "response": "restful api-like interface",
+                "url": "http://atomic.logsdon.io/responses/13",
+                "prompt_id": 13,
+                "created_at": "2014-03-15T20:00:00Z"
+            }]
 
 ## Response [/response/{response_id}]
 A single Response object with all its details
@@ -257,7 +283,11 @@ The Response resource has the following attributes:
     + response_id (required, integer, `1`) ... Integer `slug` of the Response to retrieve.
 
 ### Retrieve a Response [GET]
-+ Response 200 (application/json)
++ Response 200
+
+    + Headers
+            
+            Content-Type: application/json; charset=utf-8
 
     + Body
 
