@@ -47,9 +47,8 @@ deploy:
             name: update application code
             code: |
                 pwd
-                ls -la
-                export GOPATH=/gocode
-                ssh -i $PRIVATEKEY_PATH -l root -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no logsdon.io go get -u github.com/slogsdon/atomic
+                ls -la                
+                ssh -i $PRIVATEKEY_PATH -l root -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no logsdon.io GOPATH=/gocode go get -u github.com/slogsdon/atomic
         - script:
             name: start application
             code: ssh -i $PRIVATEKEY_PATH -l root -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no logsdon.io start atomic
