@@ -10,7 +10,7 @@ import (
 func Responses() martini.Handler {
 	return func() string {
 		var responses []models.Response
-		db.DB.Find(&responses)
+		db.DB.Order("id").Find(&responses)
 
 		resp, err := json.MarshalIndent(responses, "", "  ")
 		if err != nil {
@@ -38,7 +38,7 @@ func ShowPromptResponses() martini.Handler {
 		var prompt models.Prompt
 		var responses []models.Response
 		db.DB.Where(&models.Prompt{Slug: params["prompt_slug"]}).First(&prompt)
-		db.DB.Model(&prompt).Related(&responses)
+		db.DB.Model(&prompt).Order("id").Related(&responses)
 
 		resp, err := json.MarshalIndent(responses, "", "  ")
 		if err != nil {

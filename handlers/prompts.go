@@ -10,7 +10,7 @@ import (
 func Prompts() martini.Handler {
 	return func() string {
 		var prompts []models.Prompt
-		db.DB.Find(&prompts)
+		db.DB.Order("id").Find(&prompts)
 
 		resp, err := json.MarshalIndent(prompts, "", "  ")
 		if err != nil {
