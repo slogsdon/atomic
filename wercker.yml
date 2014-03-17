@@ -40,15 +40,15 @@ deploy:
             filename: $PRIVATEKEY_PATH
             content: $ATOMIC_DEPLOY_KEY_PRIVATE
             overwrite: true
-        - script:
-            name: stop application
-            code: ssh -i $PRIVATEKEY_PATH -l root -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no logsdon.io stop atomic
+        # - script:
+        #     name: stop application
+        #     code: ssh -i $PRIVATEKEY_PATH -l root -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no logsdon.io stop atomic
         - script:
             name: transfer application
             code: |
                 pwd
                 ls -la
                 rsync -av -e "ssh -i $PRIVATEKEY_PATH -o StrictHostKeyChecking=no -o UserKnownHostsFile=no" . root@logsdon.io:/var/www/vhosts/shanelogsdon.com/subdomains/atomic
-        - script:
-            name: start application
-            code: ssh -i $PRIVATEKEY_PATH -l root -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no logsdon.io start atomic
+        # - script:
+        #     name: start application
+        #     code: ssh -i $PRIVATEKEY_PATH -l root -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no logsdon.io start atomic
